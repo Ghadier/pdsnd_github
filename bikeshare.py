@@ -40,7 +40,7 @@ def get_filters():
         month = 'all'
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    day = input('Would you like to choose to filter data by day? \nEnter "day" for filtering or "all" for no day filter. ')
+    day = input('Would you like to choose to filter data by a day? \nEnter "day" for filtering or "all" for no day filter. ')
     valid_days = ['all', 'day']
     days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
