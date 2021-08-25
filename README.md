@@ -29,3 +29,9 @@ https://stackoverflow.com/questions/30222533/create-a-day-of-week-column-in-a-pa
 
 - how to find most common combination in pandas?
 https://stackoverflow.com/questions/63229237/finding-the-most-frequent-combination-in-dataframe
+
+- How to count the number of rows in a Pandas DataFrame in Python?
+https://www.kite.com/python/answers/how-to-count-the-number-of-rows-in-a-pandas-dataframe-in-python
+
+- How to get N first rows of Pandas DataFrame
+https://pythonexamples.org/pandas-dataframe-head-get-first-n-rows/
