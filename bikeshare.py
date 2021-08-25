@@ -40,7 +40,7 @@ def get_filters():
         month = 'all'
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    day = input('Would you like to choose to filter data by a day? \nEnter "day" for filtering.. or "all" for no day filter. ')
+    day = input('Would you like to choose to filter data by a day? \nEnter "day" for filtering or "all" for no day filter. ')
     valid_days = ['all', 'day']
     days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
@@ -129,9 +129,9 @@ def station_stats(df):
     print('Most commonly used end station is: ', popular_e_station)
 
     # TO DO: display most frequent combination of start station and end station trip
-    group_stations = df.groupby(['Start Station','End Station'])
-    popular_compination_station = group_stations.size().sort_values(ascending=False).head(1)
-    print('Most frequent combination of start station and end station trip: ', popular_compination_station)
+    group_stations = df['Start Station'] + ' to ' + df['End Station']
+    popular_compination_station = group_stations.mode()[0]
+    print('Most frequent combination of start station and end station trip is: ', popular_compination_station)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
