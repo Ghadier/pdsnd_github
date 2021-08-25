@@ -40,7 +40,7 @@ def get_filters():
         month = 'all'
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    day = input('Would you like to choose to filter data by day? \nEnter "day" for filtering or "all" for no day filter. ')
+    day = input('Would you like to choose to filter data by a day? \nEnter "day" for filtering.. or "all" for no day filter. ')
     valid_days = ['all', 'day']
     days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
@@ -108,7 +108,7 @@ def time_stats(df):
 
     # TO DO: display the most common start hour
     popular_hour = df['hour'].mode()[0]
-    print('Most common start hour: ', popular_hour)
+    print('Most common start hour is: ', popular_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -131,7 +131,7 @@ def station_stats(df):
     # TO DO: display most frequent combination of start station and end station trip
     group_stations = df.groupby(['Start Station','End Station'])
     popular_compination_station = group_stations.size().sort_values(ascending=False).head(1)
-    print('Most frequent combination of start station and end station trip is: ', popular_compination_station)
+    print('Most frequent combination of start station and end station trip: ', popular_compination_station)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -150,7 +150,7 @@ def trip_duration_stats(df):
 
     # TO DO: display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
-    print('Average travel time: ', mean_travel_time)
+    print('Average travel time is: ', mean_travel_time)
 
 
 
@@ -175,13 +175,13 @@ def user_stats(df, city):
 
     # TO DO: Display earliest, most recent, and most common year of birth
         earliest_year_birth = df['Birth Year'].min()
-        print('Earliest Year: ', earliest_year_birth)
+        print('Earliest birth year is: ', earliest_year_birth)
 
         recent_year_birth = df['Birth Year'].max()
-        print('Recent year of birth is: ', recent_year_birth)
+        print('Recent birth year is: ', recent_year_birth)
 
         common_year_birth = df['Birth Year'].mode()[0]
-        print('Most common year of birth is: ', common_year_birth)
+        print('Most common birth year is: ', common_year_birth)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -199,14 +199,14 @@ def table_show(df):
     total_rows = len(index)
 
     while check_data not in acc_ans:
-        check_data = input('Invalid inputs, please try again: Enter yes or no. ').lower()
+        check_data = input('Invalid inputs, please try again: Enter "yes" or "no". ').lower()
 
     if check_data == 'yes':
         first_rows = 5
         print(df.head(first_rows))
 
         while first_rows <= total_rows:
-            more_data = input('Do you need to check more data? Enter yes or no. ').lower()
+            more_data = input('Do you need to check 5 more rows? Enter "yes" or "no". ').lower()
             if more_data == 'yes':
                 first_rows += 5
                 print(df.head(first_rows))
